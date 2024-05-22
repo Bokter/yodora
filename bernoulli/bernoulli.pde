@@ -1,5 +1,5 @@
 import g4p_controls.*;
-
+PImage bg;
 // Globals
 
 float h1, h2; 
@@ -9,14 +9,14 @@ float q1, q2, q3;
 float p1, p2, p3;
 
 float currentHeight = 0;
-
+float currentPressure =0;
 void setup(){
+
   size(1280,720);
   createGUI();
+  bg = loadImage("bg.png");
 }
 
 void draw(){
-
-  
-    
+  background(bg);
 }
