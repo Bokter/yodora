@@ -34,16 +34,20 @@ public void changeHeight(GCustomSlider source, GEvent event) { //_CODE_:Altura:2
 public void changeHeight_1(GButton source, GEvent event) { //_CODE_:Altura_1:886692:
   
   currentHeight = h1;
-  print("Altura h1")
+  print("Altura h1");
   
 } //_CODE_:Altura_1:886692:
 
 public void changeHeight_2(GButton source, GEvent event) { //_CODE_:Altura_2:557135:
   
   currentHeight = h2;
-  print("Altura h2")
+  print("Altura h2");
   
 } //_CODE_:Altura_2:557135:
+
+public void ChangePressure(GCustomSlider source, GEvent event) { //_CODE_:Presion:925886:
+  println("custom_slider1 - GCustomSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:Presion:925886:
 
 
 
@@ -54,7 +58,7 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  Area = new GCustomSlider(this, 880, 120, 300, 60, "grey_blue");
+  Area = new GCustomSlider(this, 935, 60, 300, 60, "grey_blue");
   Area.setShowValue(true);
   Area.setShowLimits(true);
   Area.setLimits(1.0, 1.0, 10.0);
@@ -62,7 +66,7 @@ public void createGUI(){
   Area.setNumberFormat(G4P.DECIMAL, 2);
   Area.setOpaque(true);
   Area.addEventHandler(this, "changeArea");
-  Velocidad = new GCustomSlider(this, 880, 240, 300, 60, "grey_blue");
+  Velocidad = new GCustomSlider(this, 935, 180, 300, 60, "grey_blue");
   Velocidad.setShowValue(true);
   Velocidad.setShowLimits(true);
   Velocidad.setLimits(1.0, 0.0, 20.0);
@@ -70,7 +74,7 @@ public void createGUI(){
   Velocidad.setNumberFormat(G4P.DECIMAL, 2);
   Velocidad.setOpaque(true);
   Velocidad.addEventHandler(this, "changeVelocity");
-  Flujo = new GCustomSlider(this, 880, 360, 300, 60, "grey_blue");
+  Flujo = new GCustomSlider(this, 935, 300, 300, 60, "grey_blue");
   Flujo.setShowValue(true);
   Flujo.setShowLimits(true);
   Flujo.setLimits(1.0, 0.0, 5.0);
@@ -78,7 +82,7 @@ public void createGUI(){
   Flujo.setNumberFormat(G4P.DECIMAL, 2);
   Flujo.setOpaque(true);
   Flujo.addEventHandler(this, "changeFlujo");
-  Altura = new GCustomSlider(this, 880, 540, 300, 50, "grey_blue");
+  Altura = new GCustomSlider(this, 935, 618, 300, 60, "grey_blue");
   Altura.setShowValue(true);
   Altura.setShowLimits(true);
   Altura.setLimits(5.0, 5.0, 30.0);
@@ -86,26 +90,22 @@ public void createGUI(){
   Altura.setNumberFormat(G4P.DECIMAL, 2);
   Altura.setOpaque(true);
   Altura.addEventHandler(this, "changeHeight");
-  Altura_1 = new GButton(this, 920, 480, 80, 30);
+  Altura_1 = new GButton(this, 989, 520, 80, 30);
   Altura_1.setText("h1");
   Altura_1.setLocalColorScheme(GCScheme.GREEN_SCHEME);
   Altura_1.addEventHandler(this, "changeHeight_1");
-  Altura_2 = new GButton(this, 1060, 480, 80, 30);
+  Altura_2 = new GButton(this, 1097, 520, 80, 30);
   Altura_2.setText("h2");
   Altura_2.setLocalColorScheme(GCScheme.GREEN_SCHEME);
   Altura_2.addEventHandler(this, "changeHeight_2");
-  label1 = new GLabel(this, 990, 80, 80, 20);
-  label1.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label1.setText("AREA");
-  label1.setOpaque(false);
-  label2 = new GLabel(this, 990, 200, 80, 20);
-  label2.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label2.setText("VELOCIDAD");
-  label2.setOpaque(false);
-  label3 = new GLabel(this, 990, 320, 80, 20);
-  label3.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label3.setText("FLUJO");
-  label3.setOpaque(false);
+  Presion = new GCustomSlider(this, 935, 420, 300, 60, "grey_blue");
+  Presion.setShowValue(true);
+  Presion.setShowLimits(true);
+  Presion.setLimits(0.5, 0.0, 1.0);
+  Presion.setShowTicks(true);
+  Presion.setNumberFormat(G4P.DECIMAL, 2);
+  Presion.setOpaque(true);
+  Presion.addEventHandler(this, "ChangePressure");
 }
 
 // Variable declarations 
@@ -116,6 +116,4 @@ GCustomSlider Flujo;
 GCustomSlider Altura; 
 GButton Altura_1; 
 GButton Altura_2; 
-GLabel label1; 
-GLabel label2; 
-GLabel label3; 
+GCustomSlider Presion; 
