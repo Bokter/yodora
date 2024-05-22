@@ -11,12 +11,12 @@ float p1, p2, p3;
 float currentHeight = 0;
 
 void setup(){
-
   size(1280,720);
   createGUI();
-  
 }
 
 void draw(){
 
+  
+    
 }
